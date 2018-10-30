@@ -1,8 +1,9 @@
 <template>
     <div>
-        <bot 
+        <bot
         :botObj='botObj' 
-        :selectBot='selectBot'/>
+        :selectBot='selectBot'
+        :retire='retire'/>
     </div>
 </template>
 
@@ -10,7 +11,7 @@
 import Bot from './Bot/Bot'
 
 export default {
-    props: ['botObj', 'selectBot'],
+    props: ['botObj', 'selectBot','retire'],
     methods: {
 
     },

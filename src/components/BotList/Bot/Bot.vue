@@ -5,15 +5,14 @@
             <h3>HP Val: {{botObj.healthValue}}</h3>
             <div>
                 <button @click="selectBot(botObj)">SELECT</button>
-                <button>RETIRE</button>
+                <button @click='retire(botObj)'>RETIRE</button>
             </div>
         </div>
 </template>
 
 <script>
 export default {
-    props: ['botObj', 'selectBot']
-    
+    props: ['botObj', 'selectBot', 'retire']
 }
 </script>
 

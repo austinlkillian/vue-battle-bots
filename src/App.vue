@@ -26,7 +26,8 @@
         :key='i'
         :botObj='bot'
         :selectBot='selectBot'
-        :clearBots='clearBots'/>
+        :clearBots='clearBots'
+        :retire='retire'/>
       </div>
     </section>
   </div>
@@ -82,6 +83,10 @@ export default {
       let battleList = [this.bot1, this.bot2]
       let winner = battleList[Math.floor(Math.random() * battleList.length)]
       alert(`By random choice, ${winner.botName} has won!`)
+    },
+    retire(bot){
+      this.botList.splice(this.botList.indexOf(bot), 1)
+      return;
     }
   },
   components: {
