@@ -1,10 +1,10 @@
 <template>
     <div id="bot">
-            <h1>bot: {{botObj.botName}}</h1>
+            <h1>{{botObj.botName}}</h1>
             <h3>Att Val: {{botObj.attackValue}}</h3>
-            <h3>Att Val: {{botObj.healthValue}}</h3>
+            <h3>HP Val: {{botObj.healthValue}}</h3>
             <div>
-                <button>SELECT</button>
+                <button @click="selectBot(botObj.botName)">SELECT</button>
                 <button>RETIRE</button>
             </div>
         </div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    props: ['botObj']
+    props: ['botObj', 'selectBot']
     
 }
 </script>

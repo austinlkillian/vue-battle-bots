@@ -18,13 +18,15 @@
         <h1>BOT #2: {{bot2 ? bot2 : 'select a bot'}}</h1>
         <div>
             <button>BATTLE</button>
-            <button>CLEAR</button>
+            <button @click="clearBots">CLEAR</button>
         </div>
       </div>
       <div id='bots'>
         <bot-list v-for='(bot, i) in botList'
         :key='i'
-        :botObj='bot'/>
+        :botObj='bot'
+        :selectBot='selectBot'
+        :clearBots='clearBots'/>
       </div>
     </section>
   </div>
@@ -57,6 +59,20 @@ export default {
       this.attackValue = 0;
       this.healthValue = 0;
       this.switchView(false);
+    },
+    selectBot(bot){
+      if(!this.bot1){
+        this.bot1 = bot
+        return;
+      }else if(!this.bot2){
+        this.bot2 = bot
+        return;
+      }
+    },
+    clearBots(){
+      this.bot1 = ''
+      this.bot2 = ''
+      return;
     }
   },
   components: {
