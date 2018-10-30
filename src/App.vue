@@ -14,10 +14,10 @@
 
     <section id='bot-list' v-else>
       <div>
-        <h1>BOT #1: {{bot1 ? bot1 : 'select a bot'}}</h1>
-        <h1>BOT #2: {{bot2 ? bot2 : 'select a bot'}}</h1>
+        <h1>BOT #1: {{bot1 ? bot1.botName : 'select a bot'}}</h1>
+        <h1>BOT #2: {{bot2 ? bot2.botName : 'select a bot'}}</h1>
         <div>
-            <button>BATTLE</button>
+            <button @click='battle' :disabled='this.bot1 && this.bot2 ? false : true'>BATTLE</button>
             <button @click="clearBots">CLEAR</button>
         </div>
       </div>
@@ -40,7 +40,11 @@ export default {
   data() {
     return {
       showForm: true,
-      botList: [],
+      botList: [
+        {botName: 'Elaine', attackValue: 30, healthValue: 20},
+        {botName: 'George', attackValue: 40, healthValue: 10},
+        {botName: 'Jerry', attackValue: 10, healthValue: 40}
+      ],
       bot1: '',
       bot2:''
     }
@@ -73,6 +77,11 @@ export default {
       this.bot1 = ''
       this.bot2 = ''
       return;
+    }, 
+    battle(){
+      let battleList = [this.bot1, this.bot2]
+      let winner = battleList[Math.floor(Math.random() * battleList.length)]
+      alert(`By random choice, ${winner.botName} has won!`)
     }
   },
   components: {

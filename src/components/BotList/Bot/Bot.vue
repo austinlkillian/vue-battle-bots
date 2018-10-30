@@ -4,7 +4,7 @@
             <h3>Att Val: {{botObj.attackValue}}</h3>
             <h3>HP Val: {{botObj.healthValue}}</h3>
             <div>
-                <button @click="selectBot(botObj.botName)">SELECT</button>
+                <button @click="selectBot(botObj)">SELECT</button>
                 <button>RETIRE</button>
             </div>
         </div>
