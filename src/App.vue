@@ -13,9 +13,19 @@
     </section>
 
     <section id='bot-list' v-else>
-      <bot-list v-for='(bot, i) in botList'
-      :key='i'
-      :botObj='bot'/>
+      <div>
+        <h1>BOT #1: {{bot1 ? bot1 : 'select a bot'}}</h1>
+        <h1>BOT #2: {{bot2 ? bot2 : 'select a bot'}}</h1>
+        <div>
+            <button>BATTLE</button>
+            <button>CLEAR</button>
+        </div>
+      </div>
+      <div id='bots'>
+        <bot-list v-for='(bot, i) in botList'
+        :key='i'
+        :botObj='bot'/>
+      </div>
     </section>
   </div>
 </template>
@@ -28,7 +38,9 @@ export default {
   data() {
     return {
       showForm: true,
-      botList: []
+      botList: [],
+      bot1: '',
+      bot2:''
     }
   },
   methods: {
@@ -76,7 +88,14 @@ header{
 #bot-list{
      width: 100%;
      display: flex;
+     flex-direction: column;
      justify-content: space-evenly;
      align-items: center;
 }
+
+#bots{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 </style>
