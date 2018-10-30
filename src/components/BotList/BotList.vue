@@ -1,5 +1,5 @@
 <template>
-        <div>
+        <div id="bot">
             <h1>bot: {{botObj.botName}}</h1>
             <h3>Att Val: {{botObj.attackValue}}</h3>
             <h3>Att Val: {{botObj.healthValue}}</h3>
@@ -9,19 +9,31 @@
 <script>
 export default {
     props: ['botObj'],
-    
-  methods: {
+    data() {
+        return {
+            bot1: {},
+            bot2: {}
+        }
+    },
+    methods: {
 
-  }
+    }
 }
 </script>
 
 <style scoped>
 
- #botList>div{
+ #bot{
+     width: 200px;
+     height: 300px;
      display: flex;
      flex-direction: column;
      justify-content: space-evenly;
      align-items: center;
+     background: blue;
+ }
+
+ #bot:hover{
+     background: navy;
  }
 </style>

@@ -44,6 +44,7 @@ export default {
       this.botName = '';
       this.attackValue = 0;
       this.healthValue = 0;
+      this.switchView(false);
     }
   },
   components: {
